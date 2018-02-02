@@ -4,7 +4,7 @@
 #
 Name     : xhost
 Version  : 1.0.7
-Release  : 4
+Release  : 5
 URL      : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.7.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.7.tar.gz
 Summary  : No detailed summary available
