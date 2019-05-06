@@ -6,7 +6,7 @@
 #
 Name     : xhost
 Version  : 1.0.8
-Release  : 7
+Release  : 8
 URL      : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
 Source99 : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz.sig
@@ -30,7 +30,6 @@ allowed to make connections to the X server.
 Summary: bin components for the xhost package.
 Group: Binaries
 Requires: xhost-license = %{version}-%{release}
-Requires: xhost-man = %{version}-%{release}
 
 %description bin
 bin components for the xhost package.
@@ -60,7 +59,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550624075
+export SOURCE_DATE_EPOCH=1557105851
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -72,7 +78,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550624075
+export SOURCE_DATE_EPOCH=1557105851
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xhost
 cp COPYING %{buildroot}/usr/share/package-licenses/xhost/COPYING
