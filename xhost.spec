@@ -6,7 +6,7 @@
 #
 Name     : xhost
 Version  : 1.0.8
-Release  : 8
+Release  : 9
 URL      : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
 Source99 : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz.sig
