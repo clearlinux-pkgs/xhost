@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xCFDF148828C642A7 (alanc@freedesktop.org)
 #
 Name     : xhost
-Version  : 1.0.8
-Release  : 10
-URL      : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
-Source0  : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz
-Source1  : http://xorg.freedesktop.org/releases/individual/app/xhost-1.0.8.tar.gz.sig
+Version  : 1.0.9
+Release  : 11
+URL      : https://www.x.org/releases/individual/app/xhost-1.0.9.tar.gz
+Source0  : https://www.x.org/releases/individual/app/xhost-1.0.9.tar.gz
+Source1  : https://www.x.org/releases/individual/app/xhost-1.0.9.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -52,23 +52,23 @@ man components for the xhost package.
 
 
 %prep
-%setup -q -n xhost-1.0.8
-cd %{_builddir}/xhost-1.0.8
+%setup -q -n xhost-1.0.9
+cd %{_builddir}/xhost-1.0.9
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604600281
+export SOURCE_DATE_EPOCH=1670944949
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -80,10 +80,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1604600281
+export SOURCE_DATE_EPOCH=1670944949
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xhost
-cp %{_builddir}/xhost-1.0.8/COPYING %{buildroot}/usr/share/package-licenses/xhost/2504e714566874eaff0a4ff3ca44d354b135efe9
+cp %{_builddir}/xhost-%{version}/COPYING %{buildroot}/usr/share/package-licenses/xhost/264446c12e5cd4a4f8d07212256a97c38848f90d || :
 %make_install
 
 %files
@@ -95,7 +95,7 @@ cp %{_builddir}/xhost-1.0.8/COPYING %{buildroot}/usr/share/package-licenses/xhos
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/xhost/2504e714566874eaff0a4ff3ca44d354b135efe9
+/usr/share/package-licenses/xhost/264446c12e5cd4a4f8d07212256a97c38848f90d
 
 %files man
 %defattr(0644,root,root,0755)
