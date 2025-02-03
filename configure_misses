@@ -1,5 +1,10 @@
 Configure miss: authdes_create
+Configure miss: authdes_create
+Configure miss: authdes_seccreate
 Configure miss: authdes_seccreate
 Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: if Secure RPC authentication ("SUN-DES-1") should be supported
+Configure miss: if Secure RPC authentication ("SUN-DES-1") should be supported
+Configure miss: if Xtrans should support os-specific local connections
 Configure miss: if Xtrans should support os-specific local connections
